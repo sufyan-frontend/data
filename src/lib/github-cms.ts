@@ -215,7 +215,7 @@ export async function fetchPostBySlug(slug: string): Promise<Post | null> {
     date: meta.date as string,
     author: meta.author as string,
     tags: meta.tags as string[],
-    image: (meta.image as string) ?? null,
+    image: meta.image ? rawUrl(meta.image as string) : null,
     content,
   }
 }
