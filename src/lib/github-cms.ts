@@ -69,6 +69,14 @@ export function rawUrl(filePath: string): string {
   return `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${filePath}`
 }
 
+// Converts a full raw URL back to a repo-relative path for GitHub API operations.
+function toRelativePath(imageField: string | null): string | null {
+  if (!imageField) return null
+  const { owner, repo, branch } = cfg()
+  const base = `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/`
+  return imageField.startsWith(base) ? imageField.slice(base.length) : imageField
+}
+
 // Converts a title to a URL-safe slug.
 export function slugify(text: string): string {
   return text
@@ -253,9 +261,9 @@ export async function createPost({
   })
   await putTextFile(`posts/${slug}.md`, `${frontmatter}\n\n${content}`, `cms: add post "${title}"`)
 
-  // 3. Prepend entry to data.json
+  // 3. Prepend entry to data.json (image stored as full URL for API consumers)
   const allPosts = await fetchAllPosts()
-  const entry: PostEntry = { slug, title, description, date, author, tags, image: imagePath }
+  const entry: PostEntry = { slug, title, description, date, author, tags, image: imagePath ? rawUrl(imagePath) : null }
   const existing = allPosts.findIndex(p => p.slug === slug)
   if (existing >= 0) allPosts[existing] = entry
   else allPosts.unshift(entry)
@@ -292,7 +300,8 @@ export async function updatePost(slug: string, {
   const existing = allPosts.find(p => p.slug === slug)
 
   // 1. Upload new image if provided; otherwise keep current
-  let imagePath: string | null = existing?.image ?? null
+  // existing.image may be a full URL — convert to relative path for GitHub API calls
+  let imagePath: string | null = toRelativePath(existing?.image ?? null)
   if (imageBase64) {
     imagePath = `images/${slug}.${imageExt}`
     const imgFile = await getFile(imagePath)
@@ -308,8 +317,8 @@ export async function updatePost(slug: string, {
   const mdFile = await getFile(`posts/${slug}.md`)
   await putTextFile(`posts/${slug}.md`, `${frontmatter}\n\n${content}`, `cms: update post "${title}"`, mdFile?.sha)
 
-  // 3. Update data.json entry
-  const entry: PostEntry = { slug, title, description, date, author, tags, image: imagePath }
+  // 3. Update data.json entry (image stored as full URL for API consumers)
+  const entry: PostEntry = { slug, title, description, date, author, tags, image: imagePath ? rawUrl(imagePath) : null }
   const idx = allPosts.findIndex(p => p.slug === slug)
   if (idx >= 0) allPosts[idx] = entry
   else allPosts.unshift(entry)
