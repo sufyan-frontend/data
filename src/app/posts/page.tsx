@@ -1,4 +1,4 @@
-import { fetchAllPosts, rawUrl } from '@/lib/github-cms'
+import { fetchAllPosts } from '@/lib/github-cms'
 import Link from 'next/link'
 
 export const revalidate = 60
@@ -36,12 +36,12 @@ export default async function PostsPage() {
               >
                 {post.image ? (
                   <img
-                    src={rawUrl(post.image)}
+                    src={post.image}
                     alt={post.title}
                     className="w-full h-44 object-cover"
                   />
                 ) : (
-                  <div className="w-full h-44 bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center">
+                  <div className="w-full h-44 bg-linear-to-br from-blue-100 to-indigo-100 flex items-center justify-center">
                     <span className="text-4xl">📄</span>
                   </div>
                 )}
