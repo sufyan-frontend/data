@@ -1,35 +1,46 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { fetchAllPosts, createPost } from '@/lib/github-cms'
 
+const CORS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, x-cms-secret',
+}
+
 function isAuthorized(req: NextRequest): boolean {
   return req.headers.get('x-cms-secret') === process.env.CMS_SECRET
 }
 
-/** GET /api/cms/posts — returns the full post index */
+/** Preflight for cross-origin requests */
+export function OPTIONS() {
+  return new NextResponse(null, { status: 204, headers: CORS })
+}
+
+/** GET /api/cms/posts — returns the full post index (public) */
 export async function GET() {
   try {
     const posts = await fetchAllPosts()
-    return NextResponse.json({ posts })
+    return NextResponse.json({ posts }, { headers: CORS })
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Unknown error'
-    return NextResponse.json({ error: message }, { status: 500 })
+    return NextResponse.json({ error: message }, { status: 500, headers: CORS })
   }
 }
 
 /**
- * POST /api/cms/posts — creates a new post
+ * POST /api/cms/posts — creates a new post  (requires x-cms-secret header)
  *
- * Expects multipart/form-data with:
- *   title        string (required)
- *   description  string (required)
- *   content      string — markdown body
+ * multipart/form-data fields:
+ *   title        string  (required)
+ *   description  string
+ *   content      string  (markdown body)
  *   author       string
- *   tags         string[] — send multiple "tags" fields, or comma-separated
- *   image        File   — cover image (jpg/png/webp, ideally < 1 MB)
+ *   tags         string  (comma-separated, e.g. "news,update")
+ *   image        File    (jpg / png / webp — max 10 MB)
  */
 export async function POST(req: NextRequest) {
   if (!isAuthorized(req)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401, headers: CORS })
   }
   try {
     const formData = await req.formData()
@@ -51,9 +62,9 @@ export async function POST(req: NextRequest) {
     }
 
     const post = await createPost({ title, description, content, imageBase64, imageExt, tags, author })
-    return NextResponse.json({ post }, { status: 201 })
+    return NextResponse.json({ post }, { status: 201, headers: CORS })
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Unknown error'
-    return NextResponse.json({ error: message }, { status: 500 })
+    return NextResponse.json({ error: message }, { status: 500, headers: CORS })
   }
 }
