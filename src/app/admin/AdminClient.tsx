@@ -38,15 +38,10 @@ export default function AdminClient({ posts }: { posts: PostWithUrl[] }) {
     startDelete(() => removePostAction(slug))
   }
 
+  // Page chrome (header, container, tab bar) lives in AdminTabs so the posts and
+  // projects panels sit inside the same shell.
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-white border-b border-gray-200 px-6 py-5 flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-gray-900">Admin Panel</h1>
-        <a href="/posts" className="text-sm text-blue-600 hover:underline">View all posts →</a>
-      </div>
-
-      <div className="max-w-3xl mx-auto px-6 py-8 space-y-10">
+    <div className="space-y-10">
 
         {/* ── Upload Form ─────────────────────────────────────────── */}
         <section>
@@ -234,7 +229,6 @@ export default function AdminClient({ posts }: { posts: PostWithUrl[] }) {
             </div>
           )}
         </section>
-      </div>
     </div>
   )
 }

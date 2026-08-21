@@ -1,0 +1,355 @@
+[
+  {
+    "id": "shifa-care-home",
+    "title": "Shifa Care Home",
+    "description": "A warm, trust-first website for a residential care home — hero, service cards covering residential, nursing, dementia and respite care, a facilities showcase, a \"day at Shifa\" timeline, staff profiles, family reviews, FAQs, and an enquiry form. Built with Next.js and Tailwind CSS.",
+    "url": "https://shifa-care-home.vercel.app/",
+    "image": "/porfolio%20image/shifa-care-home.png",
+    "tags": [
+      "Next.js",
+      "Healthcare",
+      "Care Home",
+      "Tailwind CSS"
+    ],
+    "featured": true,
+    "kind": "production",
+    "order": 0,
+    "active": true,
+    "date": "2026-08-21T00:00:00.000Z"
+  },
+  {
+    "id": "shaheen-public-school",
+    "title": "Shaheen Public School",
+    "description": "A polished, image-rich website for a Lahore school — hero, live stats, mission and vision, programme stages, campus facilities, a real-photo gallery, an admissions flow, and an enquiry form with map. Built in Next.js with a navy-and-gold identity.",
+    "url": "https://shaheenpublicschool.edu.pk/",
+    "image": "/porfolio%20image/shaheen-public-school.png",
+    "tags": [
+      "Next.js",
+      "Education",
+      "School Website",
+      "Responsive"
+    ],
+    "featured": true,
+    "kind": "production",
+    "order": 1,
+    "active": true,
+    "date": "2026-08-21T00:00:00.000Z"
+  },
+  {
+    "id": "paragon-lyceum-school",
+    "title": "Paragon Lyceum School",
+    "description": "A clean, illustration-led school website with programme stages, campus facilities, student-life highlights, a photo/illustration gallery, a step-by-step admissions journey, and a contact section with map — designed and built with Next.js and Tailwind CSS.",
+    "url": "https://paragonlyceumschool.edu.pk/",
+    "image": "/porfolio%20image/paragon-lyceum-school.png",
+    "tags": [
+      "Next.js",
+      "Education",
+      "School Website",
+      "Tailwind CSS"
+    ],
+    "featured": true,
+    "kind": "production",
+    "order": 2,
+    "active": true,
+    "date": "2026-08-21T00:00:00.000Z"
+  },
+  {
+    "id": "sufyan-frontend-dashboard",
+    "title": "Sufyan Frontend Dashboard",
+    "description": "A modern, fully responsive admin dashboard built with Next.js and Tailwind CSS featuring clean data visualizations, sidebar navigation, and a professional dark UI.",
+    "url": "https://sufyan-frontend-dashboard.vercel.app/",
+    "image": "/porfolio%20image/sufyan-frontend-dashboard.png",
+    "tags": [
+      "Next.js",
+      "Dashboard",
+      "Tailwind CSS",
+      "Admin UI"
+    ],
+    "featured": true,
+    "kind": "production",
+    "order": 3,
+    "active": true,
+    "date": "2026-08-21T00:00:00.000Z"
+  },
+  {
+    "id": "alif-laila",
+    "title": "Alif Laila Education Platform",
+    "description": "Full education management UI system with role-based dashboards and structured UI components built for a large-scale educational institution.",
+    "url": "https://aliflaila.app/",
+    "image": "/porfolio%20image/aliflaila-app.png",
+    "tags": [
+      "React",
+      "Next.js",
+      "Dashboard",
+      "Education"
+    ],
+    "featured": true,
+    "kind": "production",
+    "order": 4,
+    "active": true,
+    "date": "2026-08-21T00:00:00.000Z"
+  },
+  {
+    "id": "ehya",
+    "title": "Ehya Education Platform",
+    "description": "Complete institutional web platform with responsive UI and modern frontend architecture, serving thousands of students and faculty.",
+    "url": "https://www.ehya.com.pk/",
+    "image": "/porfolio%20image/ehya-pk.png",
+    "tags": [
+      "Next.js",
+      "Tailwind CSS",
+      "Education"
+    ],
+    "featured": true,
+    "kind": "production",
+    "order": 5,
+    "active": true,
+    "date": "2026-08-21T00:00:00.000Z"
+  },
+  {
+    "id": "classmate",
+    "title": "Classmate Portal",
+    "description": "Student and teacher interface system with clean dashboard-based UI design for managing classes, assignments, and academic data.",
+    "url": "https://classmate.ehya.com.pk/",
+    "image": "/porfolio%20image/classmate-ehya-pk.png",
+    "tags": [
+      "React",
+      "Dashboard",
+      "Education",
+      "UI/UX"
+    ],
+    "featured": true,
+    "kind": "production",
+    "order": 6,
+    "active": true,
+    "date": "2026-08-21T00:00:00.000Z"
+  },
+  {
+    "id": "tillshop",
+    "title": "TillShop Technologies",
+    "description": "Corporate software house website with modern landing page design, service showcases, and professional company branding.",
+    "url": "https://www.tillshoptechnologies.com/",
+    "image": "/porfolio%20image/tillshoptechnologies.png",
+    "tags": [
+      "Next.js",
+      "Corporate",
+      "Landing Page"
+    ],
+    "featured": false,
+    "kind": "production",
+    "order": 7,
+    "active": true,
+    "date": "2026-08-21T00:00:00.000Z"
+  },
+  {
+    "id": "fieldxai",
+    "title": "FieldX AI",
+    "description": "AI-powered platform with a modern, responsive frontend delivering a clean and professional user experience for field operations and intelligent workflows.",
+    "url": "https://fieldxai.com/",
+    "image": "/porfolio%20image/fieldxai.png",
+    "tags": [
+      "Next.js",
+      "AI",
+      "SaaS",
+      "Tailwind CSS"
+    ],
+    "featured": false,
+    "kind": "production",
+    "order": 8,
+    "active": true,
+    "date": "2026-08-21T00:00:00.000Z"
+  },
+  {
+    "id": "ehsas",
+    "title": "Ehsas Next App",
+    "description": "React-based web application deployed on Vercel with optimized UI architecture and component-based design system.",
+    "url": "https://ehsasnext.vercel.app/",
+    "image": "/porfolio%20image/ehsasnext-vercel-app.png",
+    "tags": [
+      "React",
+      "Vercel",
+      "App"
+    ],
+    "featured": false,
+    "kind": "production",
+    "order": 9,
+    "active": true,
+    "date": "2026-08-21T00:00:00.000Z"
+  },
+  {
+    "id": "anp",
+    "title": "ANP Engineering Website",
+    "description": "Professional business website for an engineering company with responsive design, service listings, and corporate branding.",
+    "url": "https://www.anpengineerings.com/",
+    "image": "/porfolio%20image/anpengineerings.png",
+    "tags": [
+      "Next.js",
+      "Corporate",
+      "Responsive"
+    ],
+    "featured": false,
+    "kind": "production",
+    "order": 10,
+    "active": true,
+    "date": "2026-08-21T00:00:00.000Z"
+  },
+  {
+    "id": "faizan-noor-ul-quran",
+    "title": "Faizan Noor ul Quran",
+    "description": "Islamic education platform for Quran learning with a clean, user-friendly interface designed to serve students and teachers effectively.",
+    "url": "http://faizan-noor-ul-quran-s.vercel.app/",
+    "image": "/porfolio%20image/faizan-noor-ul-quran.png",
+    "tags": [
+      "Next.js",
+      "Education",
+      "Islamic"
+    ],
+    "featured": false,
+    "kind": "production",
+    "order": 11,
+    "active": true,
+    "date": "2026-08-21T00:00:00.000Z"
+  },
+  {
+    "id": "soft-ehya",
+    "title": "Soft Ehya",
+    "description": "Software division platform for Ehya Education, showcasing tech services and digital solutions with a professional corporate design.",
+    "url": "http://soft.ehya.com.pk/",
+    "image": "/porfolio%20image/soft-ehya.png",
+    "tags": [
+      "Next.js",
+      "Corporate",
+      "Software"
+    ],
+    "featured": false,
+    "kind": "production",
+    "order": 12,
+    "active": true,
+    "date": "2026-08-21T00:00:00.000Z"
+  },
+  {
+    "id": "tillshop-new",
+    "title": "TillShop New",
+    "description": "Redesigned and modernised version of the TillShop Technologies website with an updated layout, refreshed branding, and improved UI.",
+    "url": "https://tillshopnew.vercel.app/",
+    "image": "/porfolio%20image/tillshopnew.png",
+    "tags": [
+      "Next.js",
+      "Corporate",
+      "Redesign"
+    ],
+    "featured": false,
+    "kind": "production",
+    "order": 13,
+    "active": true,
+    "date": "2026-08-21T00:00:00.000Z"
+  },
+  {
+    "id": "tillshop-org",
+    "title": "TillShop",
+    "description": "Official TillShop platform delivering a modern, fully responsive web experience with clean UI, polished branding, and a professional production-ready frontend.",
+    "url": "https://www.tillshop.org/",
+    "image": "/porfolio%20image/tillshop.png",
+    "tags": [
+      "Next.js",
+      "Tailwind CSS",
+      "Corporate",
+      "Responsive"
+    ],
+    "featured": true,
+    "kind": "production",
+    "order": 14,
+    "active": true,
+    "date": "2026-08-21T00:00:00.000Z"
+  },
+  {
+    "id": "chatbot-ui",
+    "title": "Chat Bot UI",
+    "description": "A clean and interactive chatbot user interface built as a practice project to sharpen React component design, state management, and real-time UI patterns.",
+    "url": "https://chat-botui.netlify.app/",
+    "image": "/practicewebsite/chabot.png",
+    "tags": [
+      "React",
+      "CSS",
+      "UI Design",
+      "Practice"
+    ],
+    "featured": false,
+    "kind": "practice",
+    "order": 15,
+    "active": true,
+    "date": "2026-08-21T00:00:00.000Z"
+  },
+  {
+    "id": "hiba-logic",
+    "title": "Hiba Logic",
+    "description": "A practice frontend project showcasing modern UI layout, component structuring, and responsive design techniques built and deployed on Netlify.",
+    "url": "https://sufyan-frontend-hibalogic.netlify.app/",
+    "image": "/practicewebsite/hibalogic.png",
+    "tags": [
+      "React",
+      "Netlify",
+      "Responsive",
+      "Practice"
+    ],
+    "featured": false,
+    "kind": "practice",
+    "order": 16,
+    "active": true,
+    "date": "2026-08-21T00:00:00.000Z"
+  },
+  {
+    "id": "ehsas-lab-new",
+    "title": "Ehsas Lab (Redesign)",
+    "description": "A redesigned practice version of the Ehsas Lab website with improved UI layout, modern styling, and enhanced responsiveness deployed on Netlify.",
+    "url": "https://ehsas-lab.netlify.app/",
+    "image": "/practicewebsite/ehsaslabnew.png",
+    "tags": [
+      "React",
+      "Netlify",
+      "Redesign",
+      "Practice"
+    ],
+    "featured": false,
+    "kind": "practice",
+    "order": 17,
+    "active": true,
+    "date": "2026-08-21T00:00:00.000Z"
+  },
+  {
+    "id": "music-app",
+    "title": "Music App UI",
+    "description": "A practice music application UI with a stylish and modern interface, built to explore creative layouts, animations, and component design in React.",
+    "url": "https://suf13.netlify.app/",
+    "image": "/practicewebsite/music.png",
+    "tags": [
+      "React",
+      "Netlify",
+      "UI Design",
+      "Practice"
+    ],
+    "featured": false,
+    "kind": "practice",
+    "order": 18,
+    "active": true,
+    "date": "2026-08-21T00:00:00.000Z"
+  },
+  {
+    "id": "uniq-form",
+    "title": "Uniq Form",
+    "description": "A practice project focused on building clean, accessible, and well-designed form UI components with validation and smooth user interaction.",
+    "url": "https://s-f.netlify.app/",
+    "image": "/practicewebsite/uniqform.png",
+    "tags": [
+      "React",
+      "Netlify",
+      "Forms",
+      "Practice"
+    ],
+    "featured": false,
+    "kind": "practice",
+    "order": 19,
+    "active": true,
+    "date": "2026-08-21T00:00:00.000Z"
+  }
+]

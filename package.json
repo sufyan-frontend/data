@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev -p 3001",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "seed:projects": "node --env-file=.env.local scripts/seed-projects.mjs",
+    "seed:projects:write": "node --env-file=.env.local scripts/seed-projects.mjs --write"
   },
   "dependencies": {
     "next": "16.2.9",
