@@ -20,6 +20,22 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Finead Communication API
+
+Data for the Finead website lives in the same GitHub data repo under `finead/`
+(see `src/lib/finead-store.ts`). Collections: `enquiries`, `projects`, `jobs`, `team`.
+
+| Method | Route | Auth |
+| --- | --- | --- |
+| GET | `/api/finead/:collection` | public for projects, jobs, team (active items only); enquiries need the secret |
+| GET | `/api/finead/:collection?all=1` | `x-cms-secret`, includes hidden items |
+| POST | `/api/finead/:collection` | `x-cms-secret`, JSON or multipart with an `image` file |
+| PATCH | `/api/finead/:collection/:id` | `x-cms-secret`, only the fields sent change |
+| DELETE | `/api/finead/:collection/:id` | `x-cms-secret`, also removes the uploaded image |
+| POST | `/api/finead/:collection/reorder` | `x-cms-secret`, body `{ "ids": [...] }` |
+
+No new env vars: it reuses `GITHUB_*` and `CMS_SECRET`.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
