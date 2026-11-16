@@ -97,6 +97,7 @@ export class NotFoundError extends Error {}
 
 /** Every page of the website. `path` is the public URL on the ANP site. */
 export const PAGES = [
+  { slug: 'site', title: 'Header & Footer', path: '/' },
   { slug: 'home', title: 'Home', path: '/' },
   { slug: 'about', title: 'About', path: '/about' },
   { slug: 'about-overview', title: 'About · Overview', path: '/about/overview' },
