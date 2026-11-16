@@ -1,37 +1,35 @@
 /**
- * Tells the portfolio frontend to drop its cached project data after a write.
- *
- * The frontend caches GET /api/cms/projects for 5 minutes under the "projects"
- * cache tag. Without this ping an edit made in the admin panel would not appear
- * on the live site until that window expired.
- *
- * Optional by design: if FRONTEND_URL is not set the call is skipped, so local
- * development and the API keep working with no extra configuration.
- *
- * .env.local:
- *   FRONTEND_URL=http://localhost:3000        # or https://sufyan-frontend.vercel.app
- *   CMS_SECRET=…                              # already shared with the frontend
+ * Invalidates a tagged cache entry on the portfolio frontend after a CMS write.
+ * The frontend endpoint accepts only an allowlist of tags and checks CMS_SECRET.
  */
-export async function revalidateFrontendProjects(): Promise<void> {
+export async function revalidateFrontendTag(tag: string): Promise<boolean> {
   const base = process.env.FRONTEND_URL?.replace(/\/$/, '')
-  if (!base) return
+  const secret = process.env.CMS_SECRET
+  if (!base || !secret) return false
 
   try {
     const res = await fetch(`${base}/api/revalidate`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-cms-secret': process.env.CMS_SECRET ?? '',
+        'x-cms-secret': secret,
       },
-      body: JSON.stringify({ tag: 'projects' }),
+      body: JSON.stringify({ tag }),
       cache: 'no-store',
+      signal: AbortSignal.timeout(8000),
     })
     if (!res.ok) {
       console.warn(`[revalidate] frontend returned ${res.status}: ${await res.text()}`)
+      return false
     }
+    return true
   } catch (err) {
-    // Never fail the admin write just because the frontend was unreachable —
-    // the 5-minute revalidate window is the fallback.
+    // Never fail a CMS write just because the frontend is temporarily unreachable.
     console.warn(`[revalidate] could not reach ${base}: ${err instanceof Error ? err.message : err}`)
+    return false
   }
+}
+
+export async function revalidateFrontendProjects(): Promise<void> {
+  await revalidateFrontendTag('projects')
 }

@@ -1,5 +1,6 @@
 import { NextRequest } from 'next/server'
 import { getPage, isPage, savePage } from '@/lib/anp-store'
+import { revalidateFrontendTag } from '@/lib/revalidate-frontend'
 import { fail, isAuthorized, json, preflight, unauthorized, unknownPage } from '@/lib/anp-api'
 
 type Context = { params: Promise<{ slug: string }> }
@@ -32,7 +33,8 @@ export async function PUT(req: NextRequest, { params }: Context) {
   if (!body || typeof body !== 'object') return json({ error: 'Invalid request body' }, 400)
   try {
     const page = await savePage(slug, body.content)
-    return json({ page })
+    const frontendRevalidated = await revalidateFrontendTag(`anp-page-${slug}`)
+    return json({ page, frontendRevalidated })
   } catch (err) {
     return fail(err)
   }
